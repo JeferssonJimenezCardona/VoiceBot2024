@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Bot - Cobranza - Call Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .banner-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .banner-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner-container">
+            <img src="banner.png" alt="Banner">
+        </div>
+        <header>
+            <h1>Voice-Bot - Cobranza - Call Center</h1>
+        </header>
+        <main>
+            <section id="client-info">
+                <h2>Información del Cliente</h2>
+                <select id="client-select">
+                    <option value="">Seleccione un cliente</option>
+                </select>
+                <div id="client-details"></div>
+            </section>
+            <!-- <section id="agent-performance">
+                <h2>Rendimiento de Agentes</h2>
+                <div id="performance-chart"></div>
+            </section> -->
+            <section id="interaction">
+                <h2>Interacción con el Cliente</h2>
+                <div id="call-controls">
+                    <button id="start-interaction" class="btn btn-primary">
+                        <i class="icon-mic"></i> Conversar con un Agente
+                    </button>
+                </div>
+                <div id="interaction-area" class="scroll-area hidden"></div>
+                <div id="interaction-actions" class="hidden">
+                    <button id="stop-interaction" class="btn btn-danger">
+                        <i class="icon-stop"></i> Detener Interacción
+                    </button>
+                    <button id="toggle-mic" class="btn btn-secondary">
+                        <i class="icon-mic-off"></i> Activar/Desactivar Micrófono
+                    </button>
+                    <button id="export-conversation" class="btn btn-secondary">
+                        <i class="icon-download"></i> Exportar Conversación
+                    </button>
+                    <button id="analyze-conversation" class="btn btn-info">
+                        <i class="icon-chart"></i> Tex Mining
+                    </button>
+                    <button id="analyze-text" class="btn btn-secondary">
+                        <i class="icon-text"></i> Costos Estimado
+                    </button>
+                </div>
+                <div id="analysis-results" class="hidden">
+                    <h3>Resultados del Análisis</h3>
+                    <div id="sentiment-result"></div>
+                    <div id="emotions-result"></div>
+                    <div id="negotiation-result"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+    <!-- <script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_KEY"></script> -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=TttlGlHO"></script>
+    <script src="script.js"></script>
+</body>
+</html>
