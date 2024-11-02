@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     let conversationHistory = [];
     // const OPENAI_API_KEY = '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'; // Reemplaza con tu clave API de OpenAI
     // const OPENAI_API_KEY = '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'; // Reemplaza con tu clave API de OpenAI
-    const AZURE_API_KEY = '347b62daab7645d2890e4aaaaede244e'; // Reemplaza con tu clave API de Azure OpenAI
-    const AZURE_URL = 'https://labgenai.openai.azure.com/openai/deployments/azureopenai/chat/completions?api-version=2024-02-15-preview';
+    const AZURE_API_KEY = '89CedDViB8PWU59SXYu4LIw33ZrTGcZRx8zQKGTKmWkw1cbFvkPHJQQJ99AKACYeBjFXJ3w3AAABACOGJRlx'; // Reemplaza con tu clave API de Azure OpenAI
+    const AZURE_URL = 'https://labia-openai-eus-dev.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview';
 
 
 
