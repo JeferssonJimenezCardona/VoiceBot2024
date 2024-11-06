@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // const OPENAI_API_KEY = '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'; // Reemplaza con tu clave API de OpenAI
     // const OPENAI_API_KEY = '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'; // Reemplaza con tu clave API de OpenAI
     const AZURE_API_KEY = '89CedDViB8PWU59SXYu4LIw33ZrTGcZRx8zQKGTKmWkw1cbFvkPHJQQJ99AKACYeBjFXJ3w3AAABACOGJRlx'; // Reemplaza con tu clave API de Azure OpenAI
-    const AZURE_URL = 'https://labia-openai-eus-dev.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview';
+    const AZURE_URL = 'https://labia-openai-eus-dev.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-08-01-preview';
 
 
 
@@ -28,15 +28,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     Eres Emma, un asistente virtual de cobranza masculino para una empresa de telecomunicaciones llamada Indra. Tu tarea es realizar una llamada a un usuario que tiene una deuda pendiente de cien Pesos Colombianos en su factura. El número de factura termina en 98. Tus objetivos son:
 
     1. Saludar al cliente de manera amable y profesional, identificándote como Emma de Indra.
-    2. Informar sobre el saldo vencido de cien Pesos Colombianos en la factura terminada en 98.
-    3. Entender la situación financiera del cliente.
-    4. Ofrecer opciones de pago flexibles para regularizar la cuenta.
-    5. Llegar a un acuerdo de pago beneficioso para ambas partes.
-    6. Si el usuario se desvía del contexto o te hace preguntas no éticas o de información general, indícale que no puedes ayudarle a responder esa pregunta.
-    7. Utiliza el vocabulario propio del Perú y ajusta el estilo de acuerdo con el acento característico de Lima
+    2.Cuando el texto contenga asteriscos como en el siguiente ejemplo: 'Emma: Claro, Luis Guillermo. Entiendo que su tiempo es valioso, así que le presento algunas opciones rápidas para regularizar su cuenta: 1. **Plan de pagos en cuotas**: Podemos dividir el monto en varias cuotas para que sea más manejable. 2. **Descuento por pago inmediato**: Si realiza el pago completo de inmediato, podemos ofrecerle un pequeño descuento. 3. **Condonación de intereses**: Si paga un porcentaje significativo de la deuda, podemos condonar los intereses acumulados. ¿Cuál de estas opciones le parece más conveniente?', asegúrate de NO leer los asteriscos y de enfocarte solo en el texto sin ellos
+    3. Cuando encuentres el texto que te proporcione como ejemplo, como **Plan de pagos en cuotas**, evita mencionar los asteriscos
+    4. Entender la situación financiera del cliente.
+    5. Ofrecer opciones de pago flexibles para regularizar la cuenta.
+    6. Llegar a un acuerdo de pago beneficioso para ambas partes.
+    7. Si el usuario se desvía del contexto o te hace preguntas no éticas o de información general, indícale que no puedes ayudarle a responder esa pregunta.
     8. Quiero que la voz sintética suene más fluida y natural, evitando pausas excesivas en los puntos y leyendo los números de manera más conversacional. Ajusta la velocidad para que no sea ni demasiado rápida ni lenta, y usa la entonación de manera que la conversación fluya mejor. También, si es posible, evita que los puntos detengan demasiado el ritmo, prefiriendo una lectura continua, incluso para los números
     9. Evita repetir el nombre con frecuencia. Te comparto 1 ejemplo de referencia,en lugar de decir 'Emma: Entiendo, señor LUIS GUILLERMO PARDO. Antes de que cuelgue', sería más natural decir simplemente: 'Entiendo, antes de que cuelgue'.
-    Mantén siempre un tono amable y profesional. Haz que el usuario se sienta respaldado durante toda la conversación. Ofrece empatía y comprensión, pero sé firme en la necesidad de resolver la deuda.
+    10.Mantén siempre un tono amable y profesional. Haz que el usuario se sienta respaldado durante toda la conversación. Ofrece empatía y comprensión, pero sé firme en la necesidad de resolver la deuda.
+}
+
 
     Algunas opciones de pago que puedes ofrecer incluyen:
     - Plan de pagos en cuotas
@@ -46,8 +48,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     Adapta tus respuestas según la disposición y situación del cliente. Si el cliente se muestra cooperativo, sé más flexible. Si se muestra reacio, sé más persuasivo pero siempre respetuoso.
 
     IMPORTANTE: Tus respuestas deben ser naturales y directas. No uses etiquetas como "Asistente:" al inicio de tus mensajes. Habla como lo haría un representante de cobranza real.
-    Utiliza el vocabulario propio del Perú y ajusta el estilo de acuerdo con el acento característico de Lima
-    `;
+        `;
+    
 
     const clientes = [
         { id: 1, nombre: "Luis Guillermo Pardo", tipologia: "Jurídica", deuda: 100 },
@@ -179,7 +181,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Spanish Latin American Male
     async function speak(text) {
         return new Promise((resolve) => {
-            responsiveVoice.speak(text, "Spanish Latin American Male", {
+            responsiveVoice.speak(text, "Spanish Latin American Female", {
                 pitch: 0,// Tono de la voz: 1 es neutral, valores más altos agudizan la voz, y valores más bajos la hacen más grave.
                 rate: 1.3, // Velocidad de la voz: 1 es la velocidad normal, valores más bajos la hacen más lenta, y valores más altos más rápida.
                 volume: 1, // Volumen de la voz: 1 es el volumen máximo, 0 es silencio.
