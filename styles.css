@@ -1,12 +1,13 @@
 :root {
-    --background-color: #121212;
-    --text-color: #7fdbff;
-    --primary-color: #00bcd4;
-    --secondary-color: #4CAF50;
-    --danger-color: #f44336;
-    --info-color: #2196F3;
+    --background-color: #ffffff;  /* Fondo blanco */
+    --text-color: #000000;         /* Texto negro */
+    --primary-color: #003366;      /* Azul más oscuro */
+    --secondary-color: #4CAF50;    /* Verde para el segundo botón */
+    --danger-color: #f44336;       /* Rojo para el botón de peligro */
+    --info-color: #2196F3;         /* Azul claro para el botón informativo */
 }
 
+/* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -16,6 +17,7 @@ body {
     padding: 0;
 }
 
+/* Contenedor principal */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -24,154 +26,205 @@ body {
     padding: 20px;
 }
 
+/* Estilo del encabezado */
 header {
-    background: #1e1e1e;
+    background: #ffffff;
     color: var(--primary-color);
     padding: 1rem 0;
     text-align: center;
     border-bottom: 3px solid var(--primary-color);
 }
 
+/* Efecto de entrada en el título */
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    animation: slideIn 1s ease-out forwards; /* Añade la animación */
+    opacity: 0; /* Inicialmente invisible */
 }
 
+/* Animación de deslizamiento y aparición */
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px); /* Comienza desde abajo */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Finaliza en su posición original */
+        opacity: 1; /* Vuelve a ser visible */
+    }
+}
+
+/* Botones en fila con separación */
+.button-container {
+    display: flex;
+    justify-content: space-evenly; /* Distribuye los botones de manera simétrica */
+    gap: 10px; /* Añade espacio entre los botones */
+    margin-bottom: 2rem;
+    margin-top: 1rem; /* Ajusta la separación desde el contenedor superior */
+}
+
+/* Estilos de los botones */
+.btn {
+    display: inline-flex;  /* Usamos flex para los botones */
+    align-items: center;   /* Alinea el icono y el texto en el centro */
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    flex: 1; /* Asegura que los botones ocupen el mismo ancho */
+    margin-top: 0.5rem; /* Agrega un margen superior a los botones */
+    min-width: 150px; /* Establece un ancho mínimo para que los botones se vean uniformes */
+}
+
+/* Estilos para los botones con nuevos colores vibrantes */
+.btn-primary {
+    background: linear-gradient(45deg, #003366, #001f33); /* Azul más oscuro */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #001f33, #003366); /* Hover gradiente azul más oscuro */
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #32cd32, #228b22); /* Verde vibrante */
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #228b22, #2e7d32); /* Hover gradiente verde */
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #ff7043, #d32f2f); /* Naranja brillante */
+}
+
+.btn-danger:hover {
+    background: linear-gradient(45deg, #d32f2f, #c62828); /* Hover gradiente naranja */
+}
+
+.btn-info {
+    background: linear-gradient(45deg, #00bcd4, #0288d1); /* Azul claro */
+}
+
+.btn-info:hover {
+    background: linear-gradient(45deg, #0288d1, #0277bd); /* Hover gradiente azul claro */
+}
+
+/* Efectos al pasar el cursor por los botones */
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de los iconos dentro de los botones */
+.btn img {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilo de las secciones */
 main {
     padding: 2rem 0;
 }
 
 section {
-    background: #1e1e1e;
+    background: #ffffff; /* Fondo blanco para las secciones */
     margin-bottom: 2rem;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos de las secciones */
 h2 {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Título en azul más oscuro */
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
 
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    background: var(--primary-color);
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-.btn-primary {
-    background: var(--primary-color);
-}
-
-.btn-danger {
-    background: var(--danger-color);
-}
-
-.btn-secondary {
-    background: var(--secondary-color);
-}
-
-.btn-info {
-    background: var(--info-color);
-}
-
-.scroll-area {
-    height: 300px;
-    overflow-y: auto;
-    border: 1px solid #333;
-    padding: 1rem;
-    margin-top: 1rem;
-    background-color: #1e1e1e;
-    border-radius: 5px;
-}
-
-.hidden {
-    display: none;
-}
-
-#analysis-results {
-    background: #1e1e1e;
+/* Contenedor para resultados de análisis */
+#analysis-results, .scroll-area {
+    background: #ffffff;
     padding: 1rem;
     border-radius: 5px;
     margin-top: 1.5rem;
     border: 1px solid var(--primary-color);
 }
 
+/* Estilo de inputs y selects */
 select, input {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
     border: 1px solid #333;
-    background-color: #2c2c2c;
+    background-color: #f8f8f8; /* Fondo gris claro */
     color: var(--text-color);
     border-radius: 5px;
 }
 
-#client-details {
-    background: #2c2c2c;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-}
-
+/* Estilo para los mensajes del usuario y de la IA */
 .user-message, .ai-message {
     margin-bottom: 1rem;
     padding: 0.8rem;
     border-radius: 5px;
 }
 
+/* Estilo de los mensajes del usuario */
 .user-message {
-    background-color: #2c2c2c;
+    background-color: #f1f1f1; /* Fondo gris claro */
     border-left: 4px solid var(--secondary-color);
 }
 
+/* Estilo de los mensajes de la IA */
 .ai-message {
-    background-color: #1e1e1e;
+    background-color: #ffffff; /* Fondo blanco */
     border-left: 4px solid var(--primary-color);
 }
 
-/* Estilos para mejorar la accesibilidad */
-.btn:focus, select:focus, input:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
+/* Responsive design para pantallas pequeñas */
 @media (max-width: 768px) {
     .container {
         width: 95%;
     }
 
+    /* Ajustar los botones para que se apilen en pantallas pequeñas */
+    .button-container {
+        flex-direction: column;
+    }
+
     .btn {
-        display: block;
-        width: 100%;
-        margin-bottom: 0.5rem;
+        width: 100%; /* Los botones ocupan el 100% de ancho */
+        margin-bottom: 10px; /* Espacio entre botones */
     }
 }
 
-/* Estilos para los iconos (puedes usar una librería de iconos o SVG inline) */
-.icon-mic, .icon-stop, .icon-mic-off, .icon-download, .icon-chart {
-    margin-right: 5px;
+/* Estilo para el globo de notificación */
+.notification-bubble {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6347; /* Color de fondo (tomato) */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease-in-out;
 }
 
-#text-analysis-results {
-    background: #1e1e1e;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-top: 1.5rem;
-    border: 1px solid var(--primary-color);
+/* Efecto de deslizamiento para la notificación */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
