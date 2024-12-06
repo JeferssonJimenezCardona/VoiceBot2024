@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const clientDetails = document.getElementById('client-details');
 
     const cobranzaContexto = `
-    Eres Emma, un asistente virtual de cobranza masculino para una empresa de telecomunicaciones llamada Indra. Tu tarea es realizar una llamada a un usuario que tiene una deuda pendiente de cien Dolares en su factura. El número de factura termina en 98. Tus objetivos son:
+    Eres Emma, un asistente virtual de cobranza masculino para una empresa de telecomunicaciones llamada Indra. Tu tarea es realizar una llamada a un usuario que tiene una deuda pendiente de Mil Dolares en su factura. El número de factura termina en 98. Tus objetivos son:
 
     1. Saludar al cliente de manera amable y profesional, identificándote como Emma de Indra.
     2.Cuando el texto contenga asteriscos como en el siguiente ejemplo: 'Emma: Claro, Luis Guillermo. Entiendo que su tiempo es valioso, así que le presento algunas opciones rápidas para regularizar su cuenta: 1. **Plan de pagos en cuotas**: Podemos dividir el monto en varias cuotas para que sea más manejable. 2. **Descuento por pago inmediato**: Si realiza el pago completo de inmediato, podemos ofrecerle un pequeño descuento. 3. **Condonación de intereses**: Si paga un porcentaje significativo de la deuda, podemos condonar los intereses acumulados. ¿Cuál de estas opciones le parece más conveniente?', asegúrate de NO leer los asteriscos y de enfocarte solo en el texto sin ellos
@@ -52,16 +52,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     
 
     const clientes = [
-        { id: 1, nombre: "Luis Guillermo Pardo", tipologia: "Jurídica", deuda: 100 },
-        { id: 2, nombre: "Iovania Peñaloza Caicedo", tipologia: "Administrativa", deuda: 200 },
-        { id: 3, nombre: "Carlos Gómez", tipologia: "Jurídica", deuda: 300 },
-        { id: 4, nombre: "Ana Martínez", tipologia: "Administrativa", deuda: 100 },
+        { id: 1, nombre: "Luis Guillermo Pardo", tipologia: "Jurídica", deuda: 1000 },
+        { id: 2, nombre: "Iovania Peñaloza Caicedo", tipologia: "Administrativa", deuda: 2000 },
+        { id: 3, nombre: "Carlos Gómez", tipologia: "Jurídica", deuda: 3000 },
+        { id: 4, nombre: "Ana Martínez", tipologia: "Administrativa", deuda: 1000 },
         { id: 5, nombre: "Pedro Sánchez", tipologia: "Jurídica", deuda: 100 },
-        { id: 6, nombre: "Laura Torres", tipologia: "Administrativa", deuda: 500 },
+        { id: 6, nombre: "Laura Torres", tipologia: "Administrativa", deuda: 5000 },
         { id: 7, nombre: "Juan Pérez", tipologia: "Jurídica", deuda: 100 },
-        { id: 8, nombre: "Sofia López", tipologia: "Administrativa", deuda: 800 },
-        { id: 9, nombre: "Diego Fernández", tipologia: "Jurídica", deuda: 100 },
-        { id: 10, nombre: "Elena Díaz", tipologia: "Administrativa", deuda: 50 }
+        { id: 8, nombre: "Sofia López", tipologia: "Administrativa", deuda: 8000 },
+        { id: 9, nombre: "Diego Fernández", tipologia: "Jurídica", deuda: 1000 },
+        { id: 10, nombre: "Elena Díaz", tipologia: "Administrativa", deuda: 5000 }
     ];
 //-----------------------------
     initSpeechRecognition();
