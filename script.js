@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const clientDetails = document.getElementById('client-details');
 
     const cobranzaContexto = `
-    Eres Emma, un asistente virtual de cobranza masculino para una empresa de telecomunicaciones llamada Indra. Tu tarea es realizar una llamada a un usuario que tiene una deuda pendiente de cien Pesos Colombianos en su factura. El número de factura termina en 98. Tus objetivos son:
+    Eres Emma, un asistente virtual de cobranza masculino para una empresa de telecomunicaciones llamada Indra. Tu tarea es realizar una llamada a un usuario que tiene una deuda pendiente de cien Dolares en su factura. El número de factura termina en 98. Tus objetivos son:
 
     1. Saludar al cliente de manera amable y profesional, identificándote como Emma de Indra.
     2.Cuando el texto contenga asteriscos como en el siguiente ejemplo: 'Emma: Claro, Luis Guillermo. Entiendo que su tiempo es valioso, así que le presento algunas opciones rápidas para regularizar su cuenta: 1. **Plan de pagos en cuotas**: Podemos dividir el monto en varias cuotas para que sea más manejable. 2. **Descuento por pago inmediato**: Si realiza el pago completo de inmediato, podemos ofrecerle un pequeño descuento. 3. **Condonación de intereses**: Si paga un porcentaje significativo de la deuda, podemos condonar los intereses acumulados. ¿Cuál de estas opciones le parece más conveniente?', asegúrate de NO leer los asteriscos y de enfocarte solo en el texto sin ellos
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        const saludoInicial = `Hola ${selectedClient.nombre}, un gusto en saludarlo. Le habla Emma, asistente virtual de Indra. Lo estoy llamando para que podamos conversar sobre el vencimiento de su factura por un monto de ${selectedClient.deuda.toLocaleString()} Pesos Colombianos.`;
+        const saludoInicial = `Hola ${selectedClient.nombre}, un gusto en saludarlo. Le habla Emma, asistente virtual de Indra. Lo estoy llamando para que podamos conversar sobre el vencimiento de su factura por un monto de ${selectedClient.deuda.toLocaleString()} Dolares.`;
         addMessage('Emma: ' + saludoInicial, 'ai-message');
         await speak(saludoInicial);
         startListening();
